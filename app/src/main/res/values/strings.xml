@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="JobForU">Job For U</string>
+    <string name="spassword">"ABCDEFG"</string>
+    <string name="sEmail">Email</string>
+    <string name="sPassword">Password</string>
+    <string name="slogin">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="ssignup">Sign Up</string>
+    <string name="sconfirmPassword">Confirm Password</string>
+    <string name="sphone">Phone</string>
+    <string name="sEmailExample">user@gmail.com</string>
+    <string name="sbarrabusqueda">Que necesitas hoy?</string>
+    <string name="sLatestRatings">Ultimas Reseñas</string>
+    <string name="sOficio">Oficio</string>
+    <string name="snombre">Nombre</string>
+    <string name="sDireccion">Direccion</string>
+    <string name="sApellido">Apellido</string>
+    <string name="sUbicacion">Ubicacion</string>
+    <string name="sDescripcion">Descripcion</string>
+    <string name="sImagen">Imagen</string>
+    <string name="sTelefono">Telefono</string>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "995615227852",
+    "firebase_url": "https://jobforu-2fe8d-default-rtdb.firebaseio.com",
+    "project_id": "jobforu-2fe8d",
+    "storage_bucket": "jobforu-2fe8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995615227852:android:f276fa63f5bd14a6f3a769",
+        "android_client_info": {
+          "package_name": "me.jorgegamboa.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeta4s90Dq9QbVGHR0KMjHRVRQnX3vWcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
