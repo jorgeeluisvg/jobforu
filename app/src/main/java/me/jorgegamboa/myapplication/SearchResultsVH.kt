@@ -1,0 +1,22 @@
+package me.jorgegamboa.myapplication
+
+import android.view.View
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+
+class SearchResultsVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    //var ivFilaIcono : ImageView
+    val tvNombrePersona: TextView = itemView.findViewById(R.id.tvNombrePersona)
+    val tvProfesion: TextView = itemView.findViewById(R.id.tvProfesion)
+    val tvApellidoPersona: TextView = itemView.findViewById(R.id.tvApellidoPersona)
+
+    // Función bind para asignar datos a las vistas
+    fun bind(trabajador: Trabajador) {
+        tvNombrePersona.text = trabajador.nombre
+        tvApellidoPersona.text = trabajador.apellido
+        tvProfesion.text = trabajador.oficio
+
+
+        // Asigna otros datos a las vistas según tus necesidades
+    }
+}
