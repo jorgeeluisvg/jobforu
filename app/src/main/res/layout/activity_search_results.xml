@@ -24,6 +24,7 @@
         android:id="@+id/editTextText2"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_edit_text"
         android:ems="10"
         android:fontFamily="@font/inter_semibold"

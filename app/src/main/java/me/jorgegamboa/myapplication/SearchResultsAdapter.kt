@@ -1,13 +1,17 @@
 package me.jorgegamboa.myapplication
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class SearchResultsAdapter(private val context: Context) : RecyclerView.Adapter<SearchResultsVH>() {
+
     private var datos: ArrayList<Trabajador> = ArrayList()
+
 
     //METODOS IMPORTANTES
 
@@ -20,6 +24,15 @@ class SearchResultsAdapter(private val context: Context) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: SearchResultsVH, position: Int) {
         val trabajador = datos[position]
         holder.bind(trabajador)
+
+        holder.fila.setOnClickListener {
+            val intent = Intent(context,WorkerFullViewActivity::class.java)
+            intent.putExtra("nombre",trabajador.nombre)
+            intent.putExtra("descripcion",trabajador.descripcion)
+            Log.i("descripcion",trabajador.descripcion)
+            context.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {

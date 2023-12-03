@@ -14,7 +14,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-class SearchResults : AppCompatActivity() {
+class SearchResults : AppCompatActivity(){
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: SearchResultsAdapter
     private lateinit var valorRecibido: String

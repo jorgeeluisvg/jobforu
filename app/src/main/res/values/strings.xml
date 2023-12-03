@@ -21,4 +21,5 @@
     <string name="sImagen">Imagen</string>
     <string name="sTelefono">Telefono</string>
     <string name="sCall">Contactame</string>
+    <string name="sChat">Chat</string>
 </resources>
