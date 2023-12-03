@@ -34,7 +34,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cProile"
         android:layout_width="350dp"
-        android:layout_height="130dp"
+        android:layout_height="160dp"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,14 +55,14 @@
             app:layout_constraintVertical_bias="0.5">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="348dp"
-                android:layout_height="128dp"
+                android:id="@+id/rvAleatorio"
+                android:layout_width="350dp"
+                android:layout_height="150dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -95,6 +95,6 @@
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.565" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

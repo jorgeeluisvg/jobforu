@@ -36,14 +36,14 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvProfesion"
+        android:id="@+id/tvProfesionRandom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_semibold"
         android:text="@string/sOficio"
         android:textColor="@color/black"
         android:textSize="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvNombrePersona"
+        app:layout_constraintBottom_toTopOf="@+id/tvNombrePersonaRandom"
         app:layout_constraintEnd_toStartOf="@+id/ivSearchResults"
         app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.639" />
 
     <TextView
-        android:id="@+id/tvNombrePersona"
+        android:id="@+id/tvNombrePersonaRandom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_semibold"

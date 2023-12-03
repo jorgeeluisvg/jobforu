@@ -20,4 +20,5 @@
     <string name="sDescripcion">Descripcion</string>
     <string name="sImagen">Imagen</string>
     <string name="sTelefono">Telefono</string>
+    <string name="sCall">Contactame</string>
 </resources>
