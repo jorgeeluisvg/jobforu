@@ -13,6 +13,19 @@
         android:background="#1B2223"
         android:padding="40dp">
 
+        <Button
+            android:id="@+id/bActualizarPerfil"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#0EF6CC"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/sActualizar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditarTelefono" />
+
         <ImageView
             android:id="@+id/ivChat4"
             android:layout_width="35dp"
@@ -55,9 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/inter_medium"
+            android:text="@string/snombre"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="@string/snombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivEditarPerfil" />
@@ -80,8 +93,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/sApellido"
             android:fontFamily="@font/inter_medium"
+            android:text="@string/sApellido"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,9 +120,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/inter_medium"
+            android:text="@string/sUbicacion"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="@string/sUbicacion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEditarApellido" />
@@ -133,9 +146,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/inter_medium"
+            android:text="@string/sDescripcion"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="@string/sDescripcion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEditarUbi" />
@@ -159,9 +172,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/inter_medium"
+            android:text="@string/sOficio"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="@string/sOficio"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEditarDescr" />
@@ -185,9 +198,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/inter_medium"
+            android:text="@string/sTelefono"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="@string/sTelefono"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEditarOficio" />

@@ -22,4 +22,6 @@
     <string name="sTelefono">Telefono</string>
     <string name="sCall">Contactame</string>
     <string name="sChat">Chat</string>
+    <string name="sSend">Enviar</string>
+    <string name="sActualizar">Actualizar</string>
 </resources>

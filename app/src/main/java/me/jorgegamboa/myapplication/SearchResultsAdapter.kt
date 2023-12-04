@@ -29,7 +29,9 @@ class SearchResultsAdapter(private val context: Context) : RecyclerView.Adapter<
             val intent = Intent(context,WorkerFullViewActivity::class.java)
             intent.putExtra("nombre",trabajador.nombre)
             intent.putExtra("descripcion",trabajador.descripcion)
+            intent.putExtra("id_trabajador",trabajador.id_user)
             Log.i("descripcion",trabajador.descripcion)
+            Log.i("id_trabajador",trabajador.id_user)
             context.startActivity(intent)
         }
 

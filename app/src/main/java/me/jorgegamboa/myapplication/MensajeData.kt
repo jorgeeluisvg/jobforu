@@ -1,7 +1,7 @@
 package me.jorgegamboa.myapplication
 
 class MensajeData {
-    val fecha : String = ""
-    val id_sender : String = ""
-    val mensaje : String = ""
+    var id_trabajador : String = ""
+    var id_sender : String = ""
+    var mensaje : String = ""
 }

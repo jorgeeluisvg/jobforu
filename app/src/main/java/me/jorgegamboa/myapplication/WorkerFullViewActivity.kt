@@ -1,7 +1,9 @@
 package me.jorgegamboa.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -19,8 +21,11 @@ class WorkerFullViewActivity : AppCompatActivity() {
     }
 
     private fun configUI() {
+
         val nombre = intent.getStringExtra("nombre")
         val descripcion = intent.getStringExtra("descripcion")
+        val id_trabajador = intent.getStringExtra("id_trabajador")
+
 
         val tvNombre : TextView = findViewById(R.id.tvNombreFV)
         tvNombre.text = nombre
@@ -30,7 +35,9 @@ class WorkerFullViewActivity : AppCompatActivity() {
 
         val bChat : Button = findViewById(R.id.bchat)
         bChat.setOnClickListener {
-            // CHAT
+            val intent = Intent(this, Chat::class.java)
+            intent.putExtra("id_trabajador",id_trabajador)
+            startActivity(intent)
         }
 
     }
