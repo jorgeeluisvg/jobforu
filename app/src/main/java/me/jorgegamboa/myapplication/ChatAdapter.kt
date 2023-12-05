@@ -16,6 +16,7 @@ class ChatAdapter: RecyclerView.Adapter<ChatVH> {
         datos = ArrayList()
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatVH {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.chat_fila,
             parent,

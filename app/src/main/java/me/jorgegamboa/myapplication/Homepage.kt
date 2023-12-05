@@ -55,7 +55,10 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        ivChat
+        ivChat.setOnClickListener{
+            val intent = Intent(this, ChatsActivos::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
