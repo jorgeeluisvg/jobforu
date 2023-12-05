@@ -23,7 +23,7 @@ class ChatsActivos : AppCompatActivity() {
 
         // Declaramos recyclerview y el adapter
         val recyclerView : RecyclerView = findViewById(R.id.rvChatsActivos)
-        adapter = ChatsActivosAdapter()
+        adapter = ChatsActivosAdapter(this)
         // Declaramos el layout del recyclerview
         val linearLayoutManager : RecyclerView.LayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
         recyclerView.layoutManager = linearLayoutManager

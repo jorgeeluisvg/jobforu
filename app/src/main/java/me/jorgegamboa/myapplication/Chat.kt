@@ -51,11 +51,32 @@ class Chat : AppCompatActivity() {
         )
         requestQueue.add(request)
 
+        // Obtener los mensajes existentes en la conversacion
+
+        // Peticion get para obtener los mensajes
+        val requestQueueMensajes = Volley.newRequestQueue(this)
+        val requestMensaje: JsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET,
+            url,
+            null,
+            { response ->
+                procesarMensajes(response)
+                Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show()
+            }, { error ->
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+            }
+        )
+        requestQueueMensajes.add(request)
+
         // Declaramos boton y funcion para enviar mensaje
         val bSend : Button = findViewById(R.id.bSend)
         bSend.setOnClickListener {
             enviarMensaje()
         }
+    }
+
+    private fun procesarMensajes(response: JSONObject?) {
+        
     }
 
     private fun procesarRespuesta(response: JSONObject) {
