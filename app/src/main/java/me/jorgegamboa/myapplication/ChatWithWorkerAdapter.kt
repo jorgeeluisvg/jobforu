@@ -1,14 +1,12 @@
 package me.jorgegamboa.myapplication
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import java.sql.Timestamp
-import java.text.SimpleDateFormat
-import java.util.Locale
 
-class ChatAdapter: RecyclerView.Adapter<ChatVH> {
+class ChatWithWorkerAdapter : RecyclerView.Adapter<ChatWithWorkerVH>{
     // Declaramos arraylist datos
     private lateinit var datos : ArrayList<MensajeData>
 
@@ -16,32 +14,34 @@ class ChatAdapter: RecyclerView.Adapter<ChatVH> {
         datos = ArrayList()
     }
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatWithWorkerVH {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.chat_fila,
             parent,
             false)
 
         // Aqui enviamos la vista de las filas al viewholder
-        return ChatVH(view)
+        return ChatWithWorkerVH(view)
     }
 
     override fun getItemCount(): Int {
         return datos.size
     }
 
-    override fun onBindViewHolder(holder: ChatVH, position: Int) {
+    override fun onBindViewHolder(holder: ChatWithWorkerVH, position: Int) {
         // Hacemos relacion de los datos con los items de la fila
         val mensaje = datos.get(position)
+
+        Log.i("Mensaje",mensaje.mensaje)
 
         holder.tvFechaHora.text = mensaje.id_sender
         holder.tvMensaje.text = mensaje.mensaje
     }
 
     // Funcion introducir objetos tipo Mensaje
-    fun add(mensaje : MensajeData){
+    fun add(mensaje : List<MensajeData>){
         //introducir nuevo mensaje en el adapter
-        datos.add(mensaje)
+        datos.clear()
+        datos.addAll(mensaje)
         this.notifyDataSetChanged()
 
     }

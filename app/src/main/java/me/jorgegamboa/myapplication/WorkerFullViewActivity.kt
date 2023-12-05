@@ -9,11 +9,18 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import org.json.JSONObject
 
 class WorkerFullViewActivity : AppCompatActivity() {
+
+    private lateinit var firebaseAuth: FirebaseAuth
+    private var id_conv: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.workerprofile)
@@ -66,10 +73,37 @@ class WorkerFullViewActivity : AppCompatActivity() {
 
         val bChat : Button = findViewById(R.id.bchat)
         bChat.setOnClickListener {
-            val intent = Intent(this, Chat::class.java)
-            intent.putExtra("id_trabajador",id_trabajador)
-            startActivity(intent)
+
+            firebaseAuth = FirebaseAuth.getInstance()
+
+            // Primero generamos una peticion GET para generar el idconversacion
+            val id_trabajador = intent.getStringExtra("id_trabajador")
+            Log.i("PFinal", id_trabajador.toString())
+            val sender = firebaseAuth.currentUser?.uid.toString()
+            val requestQueue = Volley.newRequestQueue(this)
+            val url: String =
+                "https://www.arucc.lat/appMobile/chats/index.php?id_user_1=$sender&id_user_2=$id_trabajador"
+            val request: JsonObjectRequest = JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                { response ->
+                    procesarRespuesta(response)
+                    Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show()
+                }, { error ->
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+                }
+            )
+            requestQueue.add(request)
+
         }
 
+    }
+
+    private fun procesarRespuesta(response: JSONObject) {
+        id_conv = response.getInt("id_conv")
+        Log.i("valores3 before",id_conv.toString())
+        val intent = Intent(this, ChatsActivos::class.java)
+        startActivity(intent)
     }
 }

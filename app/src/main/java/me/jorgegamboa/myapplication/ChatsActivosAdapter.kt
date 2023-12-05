@@ -45,6 +45,7 @@ class ChatsActivosAdapter(private val context: Context) : RecyclerView.Adapter<C
             val intent = Intent(context,ChatWithWorker::class.java)
             intent.putExtra("id_usuario",id_usuario)
             intent.putExtra("id_trabajador",chats.id_user2)
+            intent.putExtra("id_conv",chats.id_conv.toString())
             Log.i("id_usuario", id_usuario.toString())
             Log.i("id_trabajador", chats.id_user2.toString())
             context.startActivity(intent)
