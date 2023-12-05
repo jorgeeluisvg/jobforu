@@ -24,4 +24,11 @@
     <string name="sChat">Chat</string>
     <string name="sSend">Enviar</string>
     <string name="sActualizar">Actualizar</string>
+    <string name="sSubir">Subir</string>
+    <string name="StipoCuenta">Tipo de cuenta</string>
+    <string name="sNormal">Normal</string>
+    <string name="sProfesional">Profesional</string>
+    <string name="sForgot">Forgot Password</string>
+    <string name="sResetp">Reset Password</string>
+    <string name="sRes">Reset</string>
 </resources>

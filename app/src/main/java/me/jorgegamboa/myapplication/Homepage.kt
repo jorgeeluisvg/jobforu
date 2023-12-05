@@ -33,6 +33,7 @@ class Homepage : AppCompatActivity() {
 
         // Iconos
         val ivPerfil : ImageView = findViewById(R.id.ivPerfil)
+        val ivChat : ImageView = findViewById(R.id.ivChat)
 
         // Edit texts
         val etBuscar: EditText = findViewById(R.id.etBuscar)
@@ -53,6 +54,8 @@ class Homepage : AppCompatActivity() {
             val intent = Intent(this, MyProfile::class.java)
             startActivity(intent)
         }
+
+        ivChat
     }
 
     override fun onStart() {

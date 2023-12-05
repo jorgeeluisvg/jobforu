@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1B2223"
-    tools:context=".Chat">
+    tools:context=".ChatsActivos">
 
     <Button
-        android:id="@+id/bSend"
+        android:id="@+id/bSend2"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:backgroundTint="#0EF6CC"
@@ -24,7 +24,35 @@
         app:layout_constraintVertical_bias="0.333" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/etMensaje2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bSend"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvChatsActivos"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChatsActivos"
+        android:layout_width="0dp"
+        android:layout_height="480dp"
+        android:layout_marginBottom="76dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintVertical_bias="0.311" />
+
+    <EditText
+        android:id="@+id/editTextText"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_edit_text"
@@ -40,7 +68,7 @@
         app:layout_constraintVertical_bias="0.116" />
 
     <ImageView
-        android:id="@+id/ivChat3"
+        android:id="@+id/ivChat5"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/chat"
@@ -52,7 +80,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <ImageView
-        android:id="@+id/ivPerfil2"
+        android:id="@+id/ivPerfil5"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/perfil"
@@ -62,31 +90,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvChatsActivos"
-        android:layout_width="0dp"
-        android:layout_height="480dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
-        app:layout_constraintVertical_bias="0.311" />
-
-    <EditText
-        android:id="@+id/etMensaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_edit_text"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bSend"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvChatsActivos"
-        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

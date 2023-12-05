@@ -26,7 +26,7 @@ class Chat : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         // Recyclerview del chat
-        val rvChat : RecyclerView = findViewById(R.id.rvChat)
+        val rvChat : RecyclerView = findViewById(R.id.rvChatsActivos)
         adapter = ChatAdapter()
         rvChat.adapter = adapter
         rvChat.layoutManager  = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true)

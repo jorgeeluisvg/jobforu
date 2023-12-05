@@ -17,12 +17,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import org.json.JSONObject
 
-class UserData : AppCompatActivity() {
+class UserDataNormal : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var storage: FirebaseStorage
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_data)
+        setContentView(R.layout.user_data_normal)
 
         firebaseAuth = FirebaseAuth.getInstance()
         // EditTexts
@@ -30,16 +30,9 @@ class UserData : AppCompatActivity() {
         val etRegistroApellido: EditText = findViewById(R.id.etRegistroApellido3)
         val etRegistroUbi: EditText = findViewById(R.id.etRegistroUbicacion3)
         val etRegistroDescr: EditText = findViewById(R.id.etRegistroDescripcion3)
-        val etRegistroImagen: EditText = findViewById(R.id.etRegistroImagen)
         val etRegistroPhone: EditText = findViewById(R.id.etRegistroTelefono3)
-        val etRegistroOficio: EditText = findViewById(R.id.etRegistroOficio)
-
-
-        // Boton
         val bUserData : Button = findViewById(R.id.bUserData)
         val bSubirImagen : Button = findViewById(R.id.bSubirImagen2)
-
-
 
         // Declaramos conexion de storage en firebase
         storage = FirebaseStorage.getInstance()
@@ -62,9 +55,7 @@ class UserData : AppCompatActivity() {
             val apellido = etRegistroApellido.text.toString()
             val ubicacion = etRegistroUbi.text.toString()
             val descripcion = etRegistroDescr.text.toString()
-            val urlImagen = etRegistroImagen.text.toString()
             val telefono = etRegistroPhone.text.toString()
-            val oficio = etRegistroOficio.text.toString()
 
             // Construimos el JSONObject
             val jsonParams = JSONObject()
@@ -73,9 +64,7 @@ class UserData : AppCompatActivity() {
             jsonParams.put("apellido", apellido)
             jsonParams.put("ubicacion", ubicacion)
             jsonParams.put("descripcion", descripcion)
-            jsonParams.put("url_imagen", urlImagen)
             jsonParams.put("telefono", telefono)
-            jsonParams.put("oficio", oficio)
 
             // URL del endpoint
             val url = "https://www.arucc.lat/appMobile/profiles/index.php"
@@ -123,4 +112,5 @@ class UserData : AppCompatActivity() {
             }
         }
     }
+
 }

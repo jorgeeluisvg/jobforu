@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         // Textos
         val tvRegister: TextView = findViewById(R.id.tvRegister)
+        val tvFP : TextView = findViewById(R.id.tvFP)
         val etLoginCorreo: EditText = findViewById(R.id.etLoginCorreo)
         val etLoginPassword: EditText = findViewById(R.id.etLoginPassword)
 
@@ -51,6 +52,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             // Inicias la nueva actividad
             startActivity(intent)
+        }
+
+        tvFP.setOnClickListener {
+            val intent = Intent(this, ResetPassword::class.java)
+            // Inicias la nueva actividad
+            startActivity(intent)
+
         }
     }
 }

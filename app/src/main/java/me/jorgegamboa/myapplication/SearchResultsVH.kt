@@ -1,8 +1,12 @@
 package me.jorgegamboa.myapplication
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 
 class SearchResultsVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -10,14 +14,33 @@ class SearchResultsVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val tvNombrePersona: TextView = itemView.findViewById(R.id.tvNombrePersonaRandom)
     val tvProfesion: TextView = itemView.findViewById(R.id.tvProfesionRandom)
     val tvApellidoPersona: TextView = itemView.findViewById(R.id.tvApellidoPersona)
+    val ivSearchResults : ImageView = itemView.findViewById(R.id.ivPopulares)
     val fila = itemView
     // Función bind para asignar datos a las vistas
     fun bind(trabajador: Trabajador) {
         tvNombrePersona.text = trabajador.nombre
         tvApellidoPersona.text = trabajador.apellido
         tvProfesion.text = trabajador.oficio
+        var id_user = trabajador.id_user
 
+        // Obtén la referencia al Storage
+        val storageReference = FirebaseStorage.getInstance().reference
 
-        // Asigna otros datos a las vistas según tus necesidades
+        // Obtén la referencia a la imagen utilizando el UID del usuario
+        val imageReference = storageReference.child("images/$id_user/foto")
+
+        // Descarga la URL de la imagen
+        imageReference.downloadUrl.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                // La URL de la imagen está disponible
+                val imageUrl = task.result.toString()
+
+                // Carga la imagen en el ImageView utilizando Picasso
+                Picasso.get()
+                    .load(imageUrl)
+                    .rotate(270F)
+                    .into(ivSearchResults)  // 'imageView' es tu ImageView en el diseño XML
+            }
+        }
     }
 }

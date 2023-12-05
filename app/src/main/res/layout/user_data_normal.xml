@@ -25,7 +25,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etRegistroOficio" />
+            app:layout_constraintTop_toBottomOf="@+id/etRegistroTelefono3" />
 
         <TextView
             android:id="@+id/textView3"
@@ -156,32 +156,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etRegistroDescripcion3" />
 
-        <EditText
-            android:id="@+id/etRegistroImagen"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_edit_text"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@string/sImagen"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="@font/inter_medium"
             android:text="@string/sTelefono"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.519"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etRegistroImagen" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
             android:id="@+id/etRegistroTelefono3"
@@ -196,45 +183,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/inter_medium"
-            android:text="@string/sOficio"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etRegistroTelefono3" />
-
-        <EditText
-            android:id="@+id/etRegistroOficio"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_edit_text"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@string/sOficio"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
         <Button
             android:id="@+id/bSubirImagen2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:layout_marginTop="20dp"
-            android:text="@string/sSubir"
             android:backgroundTint="#0EF6CC"
             android:fontFamily="@font/inter_semibold"
+            android:text="@string/sSubir"
+            android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etRegistroImagen"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.112" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
