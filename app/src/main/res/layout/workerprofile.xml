@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#1B2223"
     android:layout_height="match_parent">
 
     <Button
@@ -18,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
+        app:layout_constraintVertical_bias="0.572" />
 
     <ImageView
         android:id="@+id/ivWorkerProfile"
@@ -38,7 +39,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_semibold"
         android:text="TextView"
-        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -46,17 +48,4 @@
         app:layout_constraintTop_toBottomOf="@+id/ivWorkerProfile"
         app:layout_constraintVertical_bias="0.087" />
 
-    <EditText
-        android:id="@+id/etDescripcionFV"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
 </androidx.constraintlayout.widget.ConstraintLayout>

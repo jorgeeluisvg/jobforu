@@ -31,4 +31,12 @@
     <string name="sForgot">Forgot Password</string>
     <string name="sResetp">Reset Password</string>
     <string name="sRes">Reset</string>
+    <string name="sOpcionesRapidas">Opciones Rapidas</string>
+    <string name="sFontanero">Fontanero</string>
+    <string name="sJardinero">Jardinero</string>
+    <string name="sCarpintero">Carpintero</string>
+    <string name="sAlbañil">Albañil</string>
+    <string name="sPintor">Pintor</string>
+    <string name="sPlomero">Plomero</string>
+    <string name="sejemplos">Ejemplos de oficios</string>
 </resources>

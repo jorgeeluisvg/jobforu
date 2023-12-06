@@ -51,6 +51,9 @@ class MyProfile : AppCompatActivity() {
         bActualizarPerfil.setOnClickListener {
             // Actualizar Datos
 
+            firebaseAuth = FirebaseAuth.getInstance()
+            val id_user = firebaseAuth.currentUser?.uid
+
             val nombre = etEditarNombre.text.toString()
             val apellido = etEditarApellido.text.toString()
             val ubicacion = etEditarUbi.text.toString()
@@ -59,13 +62,14 @@ class MyProfile : AppCompatActivity() {
 
             // Construimos el JSONObject
             val jsonParams = JSONObject()
+            jsonParams.put("id_user", id_user)
             jsonParams.put("nombre", nombre)
             jsonParams.put("apellido", apellido)
             jsonParams.put("ubicacion", ubicacion)
             jsonParams.put("descripcion", descripcion)
             jsonParams.put("oficio", oficio)
 
-            val url = "https://www.arucc.lat/appMobile/profiles/index.php"
+            val url = "https://www.arucc.lat/appMobile/profiles/index.php?"
             val request = JsonObjectRequest(
                 Request.Method.POST,  // Cambiado a POST
                 url,

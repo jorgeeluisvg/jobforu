@@ -42,8 +42,6 @@ class WorkerFullViewActivity : AppCompatActivity() {
         // Image View
         val ivWorkerProfile: ImageView = findViewById(R.id.ivWorkerProfile)
 
-        val etDescripcionFV : EditText = findViewById(R.id.etDescripcionFV)
-        etDescripcionFV.setText(descripcion.toString())
 
         // obtener imagen perfil y mostrarla
         val uid = FirebaseAuth.getInstance().currentUser?.uid
