@@ -1,0 +1,102 @@
+CREATE DATABASE appMobile
+
+CREATE TABLE Usuarios (
+    id_user VARCHAR(255),
+    Nombre varchar(255),
+    Apellido varchar(255),
+    Ubicacion varchar(255),
+    Descripcion varchar(255),
+    Oficio varchar(255),
+    Telefono varchar(20),
+    url_imagen varchar(255),
+    PRIMARY KEY (id_user)
+);
+
+CREATE TABLE Conversaciones (
+    id int NOT NULL AUTO_INCREMENT,
+    id_user_1 VARCHAR(255),
+    id_user_2 VARCHAR(255),
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_user_1) REFERENCES Usuarios(id_user) ON DELETE CASCADE,
+    FOREIGN KEY (id_user_2) REFERENCES Usuarios(id_user) ON DELETE CASCADE
+);
+
+CREATE TABLE Mensajes(
+   id_conversacion int,
+   id_user_sender VARCHAR(255),
+   mensaje VARCHAR(255),
+   fecha DATETIME,
+   FOREIGN KEY (id_conversacion) REFERENCES Conversaciones(id) ON DELETE CASCADE,
+   FOREIGN KEY (id_user_sender) REFERENCES Usuarios(id_user) ON DELETE CASCADE
+);
+
+
+CREATE TABLE Review(
+   id_user VARCHAR(255),
+   id_user_post VARCHAR(255),
+   review DOUBLE,
+   comentario VARCHAR(255),
+   FOREIGN KEY (id_user) REFERENCES Usuarios(id_user) ON DELETE CASCADE,
+   FOREIGN KEY (id_user_post) REFERENCES Usuarios(id_user) ON DELETE CASCADE
+);
+
+DELIMITER $$
+
+CREATE PROCEDURE VerificarConversacionYCrearRegistro(
+    IN idUsuario1 VARCHAR(255),
+    IN idUsuario2 VARCHAR(255)
+)
+BEGIN
+    DECLARE idRegistro INT;
+
+    SELECT id INTO idRegistro
+    FROM Conversaciones
+    WHERE (id_user_1 = idUsuario1 AND id_user_2 = idUsuario2)
+       OR (id_user_1 = idUsuario2 AND id_user_2 = idUsuario1);
+
+    IF idRegistro IS NULL THEN
+        INSERT INTO Conversaciones (id_user_1, id_user_2)
+        VALUES (idUsuario1, idUsuario2);
+
+        SET idRegistro = LAST_INSERT_ID();
+    END IF;
+
+    SELECT idRegistro AS id_conversacion;
+END $$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE ObtenerRegistrosConversacion(
+IN idUsuario VARCHAR(255)
+)
+BEGIN
+
+    CREATE TEMPORARY TABLE TempResultados
+    SELECT C.id,U.id_user,U.Nombre,U.Apellido,U.url_imagen,U.Telefono,U.Oficio
+    FROM Conversaciones C
+    LEFT JOIN Usuarios U ON U.id_user=C.id_user_2 
+    WHERE id_user_1=idUsuario;
+
+
+    INSERT INTO TempResultados
+    SELECT C.id,U.id_user,U.Nombre,U.Apellido,U.url_imagen,U.Telefono,U.Oficio
+    FROM Conversaciones C
+    LEFT JOIN Usuarios U ON U.id_user=C.id_user_1 
+    WHERE id_user_2=idUsuario;
+
+    SELECT *
+    FROM TempResultados;
+
+    DROP TEMPORARY TABLE IF EXISTS TempResultados;
+END $$
+
+DELIMITER ;
+
+CREATE USER 'appUser'@'localhost' IDENTIFIED BY 'AppMobile123456$$';
+
+GRANT ALL PRIVILEGES ON appMobile . * TO 'appUser'@'localhost';
+
+
+
